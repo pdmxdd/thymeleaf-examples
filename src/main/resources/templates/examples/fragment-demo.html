@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragment Demo</title>
+</head>
+<body>
+<p>We defined a menu-fragment inside of the file found at fragments/menu-fragment.html.</p>
+<p>To use this fragments we need some special Thymeleaf syntax and we need to give it an HTML element to target. It will essentially replace the target element with the element found in the fragment.</p>
+<p>Let's call that menu fragment that exists in that other file:</p>
+<div th:replace="fragments/menu-fragment :: menu-fragment"></div>
+<p>This menu-fragment is now sharable. Any file that needs a menu can simply call this fragment. This is a fantastic way to DRY up our HTML code with the Thymeleaf Template Engine.</p>
+<p>In fact let's use this fragment in place of all of the previous HTML files that point back at the index.</p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Example</title>
+</head>
+<body>
+<h3>Dynamic Example</h3>
+<p>In many cases we will need to pass Thymeleaf some data and ask it to generate HTML using that data.</p>
+<p>In this example I added two items to the Thymeleaf model attribute: firstName and lastName.</p>
+<p>I will need to use some special thymeleaf syntax to ask Thymeleaf to build some HTML around this data.</p>
+<p>I will have to use some thymeleaf tags and then tell it which data I want to access.</p>
+<p>First Name: <th:scope th:text="${firstName}"></th:scope></p>
+<p>Last Name: <th:scope th:text="${lastName}"></th:scope></p>
+<p>I was able to access the attributes (firstName & lastName) that were added to the model with the special th syntax that you can see by looking at the file that was rendered: <b>examples/dynamic.html</b></p>
+<p>These attributes are built using Java and are sometimes Java Objects. You would then be able to access any of their properties with the appropriate getter methods.</p>
+<p><a href="/">Back to Index Menu</a></p>
+</body>
+</html>

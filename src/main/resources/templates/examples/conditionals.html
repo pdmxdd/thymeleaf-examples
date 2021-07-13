@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional Examples</title>
+</head>
+<body>
+<p>Just like with Variables and injecting data into HTML. It is sometimes nice to build conditional logic into our HTML files.</p>
+<p>Unfortunately, HTML is not a programming language and doesn't support conditional statements.</p>
+<p>However, the Thymeleaf engine supports conditional statements and can conditional build, or not build HTML based on some boolean expression. Let's take a look.</p>
+<p>For starters a boolean value was added to the model attributes named "shouldBuild". If it is true it will build the next element. An H1 that says Thymeleaf conditionally built me.</p>
+<h3 th:if="${shouldBuild}">Thymeleaf conditionally built me, shouldBuild was true</h3>
+<h3 th:if="${!shouldBuild}">Thymeleaf condtionally built me, but shouldBuild was false</h3>
+<p>You can tell thymeleaf to build something conditionally with the <b>th:if=</b> syntax. You can embed this syntax in any HTML element. And you can wrap it around multiple HTML elements by nesting all of them in a div element that has the th:if= conditional in it.</div></p>
+<p>Another example using div. This will conditionally build a ul element with some list items.</p>
+<div th:if="${buildDiv} == true">
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+    </ul>
+</div>
+<p><a href="/">Back to Index Menu</a> </p>
+</body>
+</html>

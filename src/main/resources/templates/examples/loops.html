@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Examples</title>
+</head>
+<body>
+<p>Again, being able to build HTML around a collection would be beneficial.</p>
+<p>Again, HTML doesn't support loops, but Thymeleaf does.</p>
+<p>Assume we have an ArrayList of student names and we want to add them to an unordered list. To build this HTML by hand, would be tedious. And we would have to update it every time the student list changed.</p>
+<p>Instead we can pass the ArrayList to our Thymeleaf template with the isntructions to create some HTML for each student in the studentlist.</p>
+<ul>
+<th:block th:each="studentName : ${studentNames}">
+  <li th:text="${studentName}"></li>
+</th:block>
+</ul>
+<p>You can add or remove students from the studentNames ArrayList in our controller and Thymeleaf will <b>always</b> build the proper HTML for you!</p>
+<p>These loops will work for more complex objects. Let's create a class called Student with some properties and getters, and then loop through each student printing out all of their details.</p>
+<th:block th:each="student : ${students}">
+    <ul>
+        <li th:text="${student.getFirstName()}"></li>
+        <li th:text="${student.getLastName()}"></li>
+        <li th:text="${student.getInitials()}"></li>
+    </ul>
+</th:block>
+<p>Thymeleaf loops are pretty awesome. They let us generate lots of HTML via Thymeleaf with some concise syntax.</p>
+<p><a href="/">Back to Index Menu</a></p>
+</body>
+</html>
